@@ -44,11 +44,11 @@
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<?php /*
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>
-					*/ ?>
+					<?php
+					/*
+					 * <li class="active"><a href="#">Home</a></li> <li><a href="#about">About</a></li> <li><a href="#contact">Contact</a></li>
+					 */
+					?>
 				</ul>
 			</div>
 			<!-- /.nav-collapse -->
@@ -66,11 +66,21 @@
 					<button type="button" class="btn btn-primary btn-xs"
 						data-toggle="offcanvas">Toggle nav</button>
 				</p>
-				<div class="jumbotron">
-					<h1>Hello, world!</h1>
-					<p>This is an example to show the potential of an offcanvas layout
-						pattern in Bootstrap. Try some responsive-range viewport sizes to
-						see it in action.</p>
+				<div class="row">
+					<div class="col-12 col-sm-12">
+						<form role="form" id="form_search" name="form_search" target="_blank">
+
+							<select id="search_site">
+								<option value="baidu">baidu</option>
+								<option value="google">google</option>
+								<option value="baigoogledu">baigoogledu</option>
+							</select> 
+							<input type="text" id="search_keyword" /> 
+							<input type="submit"
+								class="btn" value="GO">
+
+						</form>
+					</div>
 				</div>
 				<div class="row">
 					<div class="col-6 col-sm-6 col-lg-4">
@@ -183,9 +193,11 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="../static/js/jquery-2.1.1.min.js"></script>
 	<script src="../static/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../static/js/offcanvas.js"></script>
+	<script src="../static/js/jquery.cookie.js"></script>
+	<script src="../static/js/weburl.js"></script>
+
 </body>
 </html>
