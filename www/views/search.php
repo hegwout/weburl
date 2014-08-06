@@ -8,7 +8,7 @@
 <meta name="author" content="">
 <link rel="icon" href="favicon.ico">
 
-<title>程序员网址导航</title>
+<title>搜索-程序员网址导航</title>
 
 <!-- Bootstrap core CSS -->
 <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -62,65 +62,8 @@
 		<div class="row row-offcanvas row-offcanvas-right">
 
 			<div class="col-xs-12 col-sm-9">
-				<p class="pull-right visible-xs">
-					<button type="button" class="btn btn-primary btn-xs"
-						data-toggle="offcanvas">Toggle nav</button>
-				</p>
-				<div class="jumbotron"> 
-					 
- 
-				<div class="row">
-					<div class="col-6 col-sm-6 col-lg-4">
-						<h2>C</h2>
-						<p>
-						<ul>
-							<li>C</li>
-							<li>C</li>
-							<li>C</li>
-							<li>C</li>
-						</ul>
-						</p>
-						  
-					</div>
-					<!--/span-->
-					<div class="col-6 col-sm-6 col-lg-4">
-						<h2>C++</h2>
-						<p><ul>
-							<li>C</li>
-							<li>C</li>
-							<li>C</li>
-							<li>C</li>
-						</ul></p>
-						 
-					</div>
-					<!--/span-->
-					<div class="col-6 col-sm-6 col-lg-4">
-						<h2>PHP</h2>
-						<p><ul>
-							<li>C</li>
-							<li>C</li>
-							<li>C</li>
-							<li>C</li>
-						</ul> </p>
-						 
-					</div>
-					 <div class="col-6 col-sm-6 col-lg-4">
-						<h2>社区</h2>
-						<p>
-						<ul>
-							<li>C</li>
-							<li>C</li>
-							<li>C</li>
-							<li>C</li>
-						</ul>
-						</p>
-						  
-					</div>
-					<!--/span-->
-				</div>
-				</div>
-				
-				<!--/row-->
+				 
+  
 			</div>
 			<!--/span-->
 
