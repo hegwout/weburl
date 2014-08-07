@@ -205,7 +205,7 @@ table > tbody > tr > td.actions .btn{
     padding: 3px 8px;
 }
 .bootstrap-admin-navbar-under-small{
-    top: 25px;
+    /*top: 25px;*/
     z-index: 1020;
 }
 .bootstrap-admin-navbar .navbar-nav > li > a:focus,

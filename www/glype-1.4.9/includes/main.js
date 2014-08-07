@@ -293,7 +293,55 @@ function updateLocation(form) {
 	window.top.location = myParseURL(url, 'norefer');
 	return false;
 }
+function updateLocationFrame(form) {
+	 
+	// Reset bitfield
+	ginf.b = 0;
+	 
+	// Array of options
+	var options = new Array();
+	 
+	// Loop through form elements
+	for ( i=0; i < form.elements.length; i++ ) {
+	 
+		if ( form.elements[i].name == 'u' ) {
 
+			// Record URL
+			url = form.elements[i].value;
+		  
+		} else if ( form.elements[i].type == 'checkbox' ) {
+
+			// Add option
+			options.push(form.elements[i]);
+
+			// Update encode option (for generating the new URL)
+			if ( form.elements[i].name == 'encodeURL' ) {
+				ginf.enc.e = form.elements[i].checked;
+			}
+		}
+	}
+	 
+	// Ensure URL entered
+	if ( ! url ) {
+		return false;
+	}
+
+	// Go through available options and edit bitfield
+	for ( i=0; i < options.length; i++ ) {
+		if ( options[i].checked == true ) {
+			ginf.b = ginf.b | Math.pow(2,i);
+		}
+	}
+
+	// Ensure the user entered the http://
+	if ( url.indexOf('http') !== 0 ) {
+		url = 'http://' + url;
+	}
+
+	// Update location
+	window.open(myParseURL(url, 'norefer'));
+	return false;
+}
 
 /*****************************************************************
 * HTML Parser (any new HTML from document.write() or .innerHTML =

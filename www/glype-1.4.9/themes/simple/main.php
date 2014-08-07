@@ -1,64 +1,58 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
 <html>
 <head>
 <title><!--[site_name]--></title>
-<style type="text/css">
-	html, body {
-	   text-align: center;
-	}
-	#wrapper {
-	   width: 700px;
-	   margin: 0 auto 0 auto;
-	   text-align: left;
-	   padding: 10px;
-	   background: #eee;
-	   border: 4px outset #ccc;
-	}
-	#footer {
-	   margin: 10px 0 0 0; 
-	   font-size: 80%;
-	   color: #ccc;
-	}
-	#error {
-	   border: 1px solid red;
-	   padding: 2px;
-	   margin: 5px 0 15px 0;
-	   background: #eee;
-	}
-	.center { text-align: center; }
-	
-	/* TOOLTIP HOVER EFFECT */
-	#tooltip{ 
-	   width:20em; background: #fff;
-	}
-</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" media="screen"
+	href="../../static/css/bootstrap.min.css">
+<link rel="stylesheet" media="screen"
+	href="../../static/css/bootstrap-theme.min.css">
+
 <?=injectionJS();?>
 </head>
 <body>
-<div id="wrapper">
+	<div class="container">
+		<div class="row">
+			<form class="form-inline" action="includes/process.php?action=update"
+				method="post" onsubmit="return updateLocationFrame(this);"
+				role="form">
+				<div class="form-group">
+					<div class="col-lg-6">
+						<div class="input-group">
+							<input type="text" name="u" placeholder="http://www.some.com"
+								id="input" class="form-control"> <span class="input-group-btn">
+								<button class="btn btn-default" type="submit">Go!</button>
+							</span>
+						</div>
+						<!-- /input-group -->
+					</div>
+					<!-- /.col-lg-6 -->
+				</div>
+				<div class="form-group">
 
-	<h1 class="center"><a href="index.php"><!--[site_name]--></a></h1>
-	
-	<!--[error]-->
-	
-	<h2>About</h2>
-	
-	<!--[description]-->
-	
-	<h2>Enter URL</h2>
-	
-	<form action="includes/process.php?action=update" method="post" onsubmit="return updateLocation(this);">
-		<input type="text" name="u" id="input" size="40">
-		<input type="submit" value="Go">
-	
-		<h3>Options</h3>
-		<ul id="options">
-			<?php foreach ($toShow as $option) echo '<li><input type="checkbox" name="'.$option['name'].'" id="'.$option['name'].'"'.$option['checked'].'><label for="'.$option['name'].'" class="tooltip" onmouseover="tooltip(\''.$option['escaped_desc'].'\')" onmouseout="exit();">'.$option['title'].'</label></li>';?>
-		</ul>
-	</form>
-	
-	<p class="center">Powered by <a href="http://www.glype.com/">Glype</a>&reg; <!--[version]-->.</p>  
-</div>
+					<div class="col-lg-12">
+						<b>选项:</b> <input type="checkbox" checked="checked" id="encodeURL"
+							name="encodeURL"> <label for="encodeURL">编码URL</label> <input
+							type="checkbox" id="encodePage" name="encodePage"> <label
+							for="encodePage">加密页面</label> <input type="checkbox"
+							checked="checked" id="allowCookies" name="allowCookies"> <label
+							for="allowCookies">允许Cookie</label> <input type="checkbox"
+							checked="checked" id="stripJS" name="stripJS"> <label
+							for="stripJS">禁用脚本</label> <input type="checkbox"
+							checked="checked" id="stripObjects" name="stripObjects"> <label
+							for="stripObjects">禁用对象</label>
+					</div>
+
+				</div>
+
+			</form>
+			<p class="center hide">
+				<a href="http://www.glype.com/" target="_blank">Glype</a>&reg;
+				<!--[version]-->
+				.
+			</p>
+		</div>
+	</div>
 </body>
 </html>

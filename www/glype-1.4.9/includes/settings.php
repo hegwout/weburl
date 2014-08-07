@@ -33,7 +33,7 @@ $CONFIG['enable_blockscript'] = false;
 
 # Theme/skin to use. This should be the name of the appropriate
 # folder inside the /themes/ folder.
-$CONFIG['theme'] = 'default';
+$CONFIG['theme'] = 'simple';
 
 # Run plugins on these websites
 $CONFIG['plugins'] = 'facebook.com,google.com,hotmail.com,live.com,msn.com,myspace.com,twitter.com,yahoo.com,youtube.com,ytimg.com';
@@ -47,7 +47,7 @@ $CONFIG['tmp_dir'] = GLYPE_ROOT . '/tmp/';
 # reduces bandwidth usage but at the cost of increased CPU load.
 $CONFIG['gzip_return'] = false;
 
-# Warn users before browsing a secure site if on an unsecure
+# Warn users before browsing a secure site if on an insecure
 # connection. This option has no effect if your proxy is on https.
 $CONFIG['ssl_warning'] = true;
 
@@ -76,11 +76,6 @@ $CONFIG['footer_include'] = '';
 # servers.
 $CONFIG['path_info_urls'] = false;
 
-# Generate unique URLs for each visitor. This increases privacy for
-# the user but you cannot create links directly to proxied pages
-# from outside the script if this option is enabled.
-$CONFIG['unique_urls'] = false;
-
 
 /*****************************************************************
 * Hotlinking
@@ -105,7 +100,7 @@ $CONFIG['enable_logging'] = false;
 
 # Enter a destination for log files. A new log file will be created
 # each day in the directory specified. The directory must be
-# writable. To protect against unauthorised access, place the log
+# writable. To protect against unauthorized access, place the log
 # folder above your webroot.
 $CONFIG['logging_destination'] = $CONFIG['tmp_dir'] . 'logs/';
 
@@ -175,7 +170,7 @@ $CONFIG['queue_transfers'] = true;
 $CONFIG['cookies_on_server'] = false;
 
 # If storing cookies on the server, specify a folder to save the
-# cookie data in. To protect against unauthorised access, place the
+# cookie data in. To protect against unauthorized access, place the
 # cookie folder above your webroot.
 $CONFIG['cookies_folder'] = $CONFIG['tmp_dir'] . 'cookies/';
 
@@ -263,7 +258,7 @@ $CONFIG['options']['stripObjects'] = array(
 * Do not edit this section manually!
 ******************************************************************/
 
-# Settings file version for determining compatability with admin
+# Settings file version for determining compatibility with admin
 # tool.
 $CONFIG['version'] = '1.4.9';
 

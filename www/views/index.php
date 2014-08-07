@@ -1,130 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="icon" href="favicon.ico">
+<?php include 'header.php'?>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="text-muted bootstrap-admin-box-title">搜索</div>
+				</div>
+				<div class="bootstrap-admin-panel-content">
+					<form role="form" id="form_search" name="form_search"
+						target="_blank" class="form-horizontal">
+						<fieldset>
+							<div class="form-group">
+								<div class="col-lg-4">
+									<select id="search_site" class="form-control">
+										<option value="google">google(tmd123.com)</option>
+										<option value="baidu">baidu</option>
+										<option value="baigoogledu">baigoogledu</option>
+									</select>
+								</div>
+								<div class="col-lg-6">
+									<input type="text" class="form-control" id="search_keyword" />
+								</div>
+								<div class="col-lg-2">
+									<button class="btn btn-default">搜索</button>
+								</div>
 
-<title>程序员网址导航</title>
+							</div>
 
-<!-- Bootstrap core CSS -->
-<link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+							<div class="form-group">
+								<div class="col-lg-4" style="height: 33px;">&nbsp;</div>
+							</div>
 
-<!-- Custom styles for this template -->
-<link href="../static/js/offcanvas.css" rel="stylesheet">
-
-<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-<script src="../static/js/ie-emulation-modes-warning.js"></script>
-
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="../static/js/ie10-viewport-bug-workaround.js"></script>
-
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
-</head>
-
-<body>
-	<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">程序员网址导航</a>
+						</fieldset>
+					</form>
+				</div>
 			</div>
-			<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<?php
-					/*
-					 * <li class="active"><a href="#">Home</a></li> <li><a href="#about">About</a></li> <li><a href="#contact">Contact</a></li>
-					 */
-					?>
-				</ul>
-			</div>
-			<!-- /.nav-collapse -->
-		</div>
-		<!-- /.container -->
-	</div>
-	<!-- /.navbar -->
-
-	<div class="container">
-		<div class="row ">
-			<div class="col-md-8">
-				<form role="form" id="form_search" name="form_search"
-					target="_blank">
-
-					<select id="search_site">
-						<option value="baidu">baidu</option>
-						<option value="google">google</option>
-						<option value="baigoogledu">baigoogledu</option>
-					</select> <input type="text" id="search_keyword" /> <input
-						type="submit" class="btn" value="GO">
-				</form>
-				<script type="text/javascript" src="http://localhost/glype-1.4.9/includes/main.js?1.4.9"></script>
-				<form onsubmit="return updateLocation(this);" method="post"
-					target="_top"
-					action="<?php echo $url;?>">
-
-					<p>
-
-						<b>URL:</b> <input type="text" 
-						 	class="input-mid" placeholder="http://some.com"
-							name="u"> <input type="submit" class="btn"
-							value="Go">  
-
-					</p>
-
-					<p>
-						<b>Options:</b> <input type="checkbox" checked="checked"
-							id="encodeURL" name="encodeURL"> <label for="encodeURL">编码URL</label> 
-							<input type="checkbox" id="encodePage"
-							name="encodePage"> <label for="encodePage">加密页面</label> <input
-							type="checkbox" checked="checked" id="allowCookies"
-							name="allowCookies"> <label for="allowCookies">允许Cookie</label>
-						<input type="checkbox" checked="checked" id="stripJS"
-							name="stripJS"> <label for="stripJS">禁用脚本</label> <input
-							type="checkbox" checked="checked" id="stripObjects"
-							name="stripObjects"> <label for="stripObjects">禁用对象</label>
-					</p>
-
-				</form>
-				
-			</div>
-			
-			<div class="col-md-4">
-				right
-				
-
-			</div>
-
 		</div>
 
-		<hr>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="text-muted bootstrap-admin-box-title">代理访问</div>
+				</div>
+				<div class="bootstrap-admin-panel-content">
+					<iframe src="glype-1.4.9/" frameborder="0" width="100%" srollbar="no" height="90"></iframe>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="text-muted bootstrap-admin-box-title">在线工具</div>
+				</div>
+				<div class="bootstrap-admin-panel-content">
+					<div class="row">
+					<?php foreach($tools as $k => $v){?>
+						<span class="col-md-2"><a href="<?php echo $v['url'];?>" target="_blank"><?php echo $v['name'];?></a></span>
+					<?php }?>
+					</div>
+				</div>
+			</div>
+		</div>
 
-		<footer>
-			<p>&copy; Company 2014</p>
-		</footer>
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="text-muted bootstrap-admin-box-title">常用网址</div>
+				</div>
+				<div class="bootstrap-admin-panel-content">
+					<div class="row">
+					<?php foreach($links as $k => $v){?>
+						<span class="col-md-2"><a href="<?php echo $v['url'];?>" target="_blank"><?php echo $v['name'];?></a></span>
+					<?php }?>
+					</div>
+				</div>
+			</div>
+		</div>
 
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="text-muted bootstrap-admin-box-title">软件下载</div>
+				</div>
+				<div class="bootstrap-admin-panel-content">
+
+					<ul class="nav nav-tabs" id="download_tab">
+						<li class="active"><a href="#tab1" data-toggle="tab">Windows</a></li>
+						<li><a href="#tab2" data-toggle="tab">Mac</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="tab1">
+							<table class="table table-bordered table-striped">
+								<tbody>
+									<tr>
+										<td width="100"><span class="label label-primary">集成开发工具</span></td>
+										<td><a href="http://www.eclipse.org/downloads/"
+											target="_blank">Eclipse</a> | <a
+											href="http://www.netbeans.org/downloads/" target="_blank">NetBeans</a>
+											| <a
+											href="http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-web"
+											target="_blank">Visual Studio Express</a> dev-c++ | intellij
+											idea | adt</td>
+									</tr>
+									<tr>
+										<td><span class="label label-primary">编辑器</span></td>
+										<td><a href="http://www.sublimetext.com/2" target="_blank">Sublime</a>
+											| <a href="http://www.sublimetext.com/2" target="_blank">Notepad++</a>
+											|</td>
+									</tr>
+									<tr>
+										<td><span class="label label-primary">网络工具</span></td>
+										<td>Filezilla | XShell |</td>
+									</tr>
+									<tr>
+										<td><span class="label label-primary">工具效率</span></td>
+										<td>Evernote | Noteone | WPS | OpenOffice</td>
+									</tr>
+									<tr>
+										<td><span class="label label-primary">WEB相关</span></td>
+										<td>Nginx | MySQL | Redis | Memcache</td>
+									</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+						<div class="tab-pane" id="tab2">tab2</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	<!--/.container-->
 
-
-
-	<script src="../static/js/jquery-2.1.1.min.js"></script>
-	<script src="../static/bootstrap/js/bootstrap.min.js"></script>
-	<script src="../static/js/offcanvas.js"></script>
-	<script src="../static/js/jquery.cookie.js"></script>
-	<script src="../static/js/weburl.js"></script>
-
-</body>
-</html>
+</div>
+<!--/.container-->
+<?php include 'footer.php'?>
+	
