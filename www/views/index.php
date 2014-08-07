@@ -44,11 +44,11 @@
 			</div>
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<?php /*
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>
-					*/ ?>
+					<?php
+					/*
+					 * <li class="active"><a href="#">Home</a></li> <li><a href="#about">About</a></li> <li><a href="#contact">Contact</a></li>
+					 */
+					?>
 				</ul>
 			</div>
 			<!-- /.nav-collapse -->
@@ -58,76 +58,56 @@
 	<!-- /.navbar -->
 
 	<div class="container">
+		<div class="row ">
+			<div class="col-md-8">
+				<form role="form" id="form_search" name="form_search"
+					target="_blank">
 
-		<div class="row row-offcanvas row-offcanvas-right">
+					<select id="search_site">
+						<option value="baidu">baidu</option>
+						<option value="google">google</option>
+						<option value="baigoogledu">baigoogledu</option>
+					</select> <input type="text" id="search_keyword" /> <input
+						type="submit" class="btn" value="GO">
+				</form>
+				<script type="text/javascript" src="http://localhost/glype-1.4.9/includes/main.js?1.4.9"></script>
+				<form onsubmit="return updateLocation(this);" method="post"
+					target="_top"
+					action="<?php echo $url;?>">
 
-			<div class="col-xs-12 col-sm-9">
-				<p class="pull-right visible-xs">
-					<button type="button" class="btn btn-primary btn-xs"
-						data-toggle="offcanvas">Toggle nav</button>
-				</p>
-				<div class="jumbotron"> 
-					 
- 
-				<div class="row">
-					<div class="col-6 col-sm-6 col-lg-4">
-						<h2>C</h2>
-						<p>
-						<ul>
-							<li>C</li>
-							<li>C</li>
-							<li>C</li>
-							<li>C</li>
-						</ul>
-						</p>
-						  
-					</div>
-					<!--/span-->
-					<div class="col-6 col-sm-6 col-lg-4">
-						<h2>C++</h2>
-						<p><ul>
-							<li>C</li>
-							<li>C</li>
-							<li>C</li>
-							<li>C</li>
-						</ul></p>
-						 
-					</div>
-					<!--/span-->
-					<div class="col-6 col-sm-6 col-lg-4">
-						<h2>PHP</h2>
-						<p><ul>
-							<li>C</li>
-							<li>C</li>
-							<li>C</li>
-							<li>C</li>
-						</ul> </p>
-						 
-					</div>
-					 <div class="col-6 col-sm-6 col-lg-4">
-						<h2>社区</h2>
-						<p>
-						<ul>
-							<li>C</li>
-							<li>C</li>
-							<li>C</li>
-							<li>C</li>
-						</ul>
-						</p>
-						  
-					</div>
-					<!--/span-->
-				</div>
-				</div>
+					<p>
+
+						<b>URL:</b> <input type="text" 
+						 	class="input-mid" placeholder="http://some.com"
+							name="u"> <input type="submit" class="btn"
+							value="Go">  
+
+					</p>
+
+					<p>
+						<b>Options:</b> <input type="checkbox" checked="checked"
+							id="encodeURL" name="encodeURL"> <label for="encodeURL">编码URL</label> 
+							<input type="checkbox" id="encodePage"
+							name="encodePage"> <label for="encodePage">加密页面</label> <input
+							type="checkbox" checked="checked" id="allowCookies"
+							name="allowCookies"> <label for="allowCookies">允许Cookie</label>
+						<input type="checkbox" checked="checked" id="stripJS"
+							name="stripJS"> <label for="stripJS">禁用脚本</label> <input
+							type="checkbox" checked="checked" id="stripObjects"
+							name="stripObjects"> <label for="stripObjects">禁用对象</label>
+					</p>
+
+				</form>
 				
-				<!--/row-->
 			</div>
-			<!--/span-->
+			
+			<div class="col-md-4">
+				right
+				
 
-			 
-			<!--/span-->
+			</div>
+
 		</div>
-		<!--/row-->
 
 		<hr>
 
@@ -140,12 +120,11 @@
 
 
 
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="../static/js/jquery-2.1.1.min.js"></script>
 	<script src="../static/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../static/js/offcanvas.js"></script>
- 
-</body> 
+	<script src="../static/js/jquery.cookie.js"></script>
+	<script src="../static/js/weburl.js"></script>
+
+</body>
 </html>

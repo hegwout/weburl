@@ -19,13 +19,15 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{ 
-		$this->load->view('index');
+		$url = "http://localhost/glype-1.4.9/includes/process.php?action=update";
+		$data = array('url'=>$url);
+		$this->load->view('index',$data);
 	}
 
-	public function search()
+	public function test()
 	{
  
-		$this->load->view('search');
+		$this->load->view('ui-and-interface');
 	}
 	
 	public function agent()
