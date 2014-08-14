@@ -30,6 +30,7 @@
             .notification{
                 margin: 5px 0;
             }
+            .stat_div a img{width:1px; height:1px;}
         </style>
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

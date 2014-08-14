@@ -110,6 +110,19 @@ class Url_model extends My_Model
 		$query = $this -> db -> get($this -> table,$num);
 		return $query -> result_array();
 	}
-	
-	
+	/**
+	 * 软件下载
+	 * @param int $category_id
+	 * @param int $type_id
+	 * @param int $num
+	 */
+	public function get_top_downloads($category_id,$type_id, $num = 10)
+	{
+		$this -> db -> select('url,name,id');
+		$this -> db -> where('category_id',	$category_id );
+		$this -> db -> where('type_id',		$type_id );
+		$this -> db -> order_by('list_order ASC');
+		$query = $this -> db -> get($this -> table,$num);
+		return $query -> result_array();
+	}
 }

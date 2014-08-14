@@ -1,4 +1,16 @@
+(function(){
+	WebUrl = {
+		init : function(){
+			var site = $.cookie('search_site');
+			if(site)
+				$('#search_site').val(site);
+		}
+		
+	}	
+})(jQuery);
+
 $(function(){
+	WebUrl.init();
 	$('#form_search').submit(function(){
 		var site = $('#search_site').val();
 		var url = '';
@@ -15,6 +27,7 @@ $(function(){
 				url = 'http://www.baigoogledu.com/s.php?hl=zh-CN&q=' + keyword;
 				break;
 		}
+		$.cookie('search_site',site);
 		window.open(url);
 		return false;
 	});
@@ -22,5 +35,5 @@ $(function(){
 	$('#download_tab a').hover(function (e) { 
         e.preventDefault();//阻止a链接的跳转行为 
         $(this).tab('show');//显示当前选中的链接及关联的content 
-    }) 
-})
+    });
+});

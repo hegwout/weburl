@@ -20,7 +20,7 @@
 				<div class="form-group">
 					<div class="col-lg-6">
 						<div class="input-group">
-							<input type="text" name="u" placeholder="http://www.some.com"
+							<input type="text" name="u" autocomplete="off" placeholder="http://www.some.com"
 								id="input" class="form-control"> <span class="input-group-btn">
 								<button class="btn btn-default" type="submit">Go!</button>
 							</span>

@@ -10,18 +10,18 @@
 					<form role="form" id="form_search" name="form_search"
 						target="_blank" class="form-horizontal">
 						<fieldset>
-							<div class="form-group">
+							<div class="form-group input-group">
 								<div class="col-lg-4">
-									<select id="search_site" class="form-control">
+									<select id="search_site" autocomplete="off" class="form-control">
 										<option value="google">google(tmd123.com)</option>
 										<option value="baidu">baidu</option>
 										<option value="baigoogledu">baigoogledu</option>
 									</select>
 								</div>
 								<div class="col-lg-6">
-									<input type="text" class="form-control" id="search_keyword" />
+									<input type="text" autocomplete="off" class="form-control" id="search_keyword" />
 								</div>
-								<div class="col-lg-2">
+								<div class="col-lg-2 ">
 									<button class="btn btn-default">搜索</button>
 								</div>
 
@@ -43,7 +43,8 @@
 					<div class="text-muted bootstrap-admin-box-title">代理访问</div>
 				</div>
 				<div class="bootstrap-admin-panel-content">
-					<iframe src="glype-1.4.9/" frameborder="0" width="100%" srollbar="no" height="90"></iframe>
+					<iframe src="glype-1.4.9/" frameborder="0" width="100%"
+						srollbar="no" height="91"></iframe>
 				</div>
 			</div>
 		</div>
@@ -55,7 +56,8 @@
 				<div class="bootstrap-admin-panel-content">
 					<div class="row">
 					<?php foreach($tools as $k => $v){?>
-						<span class="col-md-2"><a href="<?php echo $v['url'];?>" target="_blank"><?php echo $v['name'];?></a></span>
+						<span class="col-md-2"><a href="<?php echo $v['url'];?>"
+							target="_blank"><?php echo $v['name'];?></a></span>
 					<?php }?>
 					</div>
 				</div>
@@ -70,7 +72,8 @@
 				<div class="bootstrap-admin-panel-content">
 					<div class="row">
 					<?php foreach($links as $k => $v){?>
-						<span class="col-md-2"><a href="<?php echo $v['url'];?>" target="_blank"><?php echo $v['name'];?></a></span>
+						<span class="col-md-2"><a href="<?php echo $v['url'];?>"
+							target="_blank"><?php echo $v['name'];?></a></span>
 					<?php }?>
 					</div>
 				</div>
@@ -83,50 +86,87 @@
 					<div class="text-muted bootstrap-admin-box-title">软件下载</div>
 				</div>
 				<div class="bootstrap-admin-panel-content">
-
+					<?php /*
 					<ul class="nav nav-tabs" id="download_tab">
-						<li class="active"><a href="#tab1" data-toggle="tab">Windows</a></li>
-						<li><a href="#tab2" data-toggle="tab">Mac</a></li>
+						<li class="active"><a href="javascript:;" data-toggle="tab">Windows</a></li>
+						
 					</ul>
+					*/?>
 					<div class="tab-content">
 						<div class="tab-pane active" id="tab1">
 							<table class="table table-bordered table-striped">
 								<tbody>
 									<tr>
 										<td width="100"><span class="label label-primary">集成开发工具</span></td>
-										<td><a href="http://www.eclipse.org/downloads/"
-											target="_blank">Eclipse</a> | <a
-											href="http://www.netbeans.org/downloads/" target="_blank">NetBeans</a>
-											| <a
-											href="http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-web"
-											target="_blank">Visual Studio Express</a> dev-c++ | intellij
-											idea | adt</td>
+										<td>
+										<?php foreach($windows[4] as $k => $v){?>
+											<?php if( $k > 0 ) echo ' | '; ?> 
+											<a href="<?php echo $v['url'];?>" target="_blank"><?php echo $v['name'];?></a> 
+										<?php }?>
+										</td>
 									</tr>
 									<tr>
 										<td><span class="label label-primary">编辑器</span></td>
-										<td><a href="http://www.sublimetext.com/2" target="_blank">Sublime</a>
-											| <a href="http://www.sublimetext.com/2" target="_blank">Notepad++</a>
-											|</td>
+										<td><?php foreach($windows[5] as $k => $v){?>
+											<?php if( $k > 0 ) echo ' | '; ?> 
+											<a href="<?php echo $v['url'];?>" target="_blank"><?php echo $v['name'];?></a> 
+										<?php }?></td>
 									</tr>
 									<tr>
 										<td><span class="label label-primary">网络工具</span></td>
-										<td>Filezilla | XShell |</td>
+										<td><?php foreach($windows[6] as $k => $v){?>
+											<?php if( $k > 0 ) echo ' | '; ?> 
+											<a href="<?php echo $v['url'];?>" target="_blank"><?php echo $v['name'];?></a> 
+										<?php }?></td>
 									</tr>
 									<tr>
 										<td><span class="label label-primary">工具效率</span></td>
-										<td>Evernote | Noteone | WPS | OpenOffice</td>
+										<td><?php foreach($windows[7] as $k => $v){?>
+											<?php if( $k > 0 ) echo ' | '; ?> 
+											<a href="<?php echo $v['url'];?>" target="_blank"><?php echo $v['name'];?></a> 
+										<?php }?></td>
 									</tr>
-									<tr>
-										<td><span class="label label-primary">WEB相关</span></td>
-										<td>Nginx | MySQL | Redis | Memcache</td>
-									</tr>
-
-
 								</tbody>
 							</table>
 						</div>
-						<div class="tab-pane" id="tab2">tab2</div>
-
+						<?php /*
+						<div class="tab-pane" id="tab2">
+						<table class="table table-bordered table-striped">
+								<tbody>
+									<tr>
+										<td width="100"><span class="label label-primary">集成开发工具</span></td>
+										<td>
+										<?php foreach($mac[4] as $k => $v){?>
+											<?php if( $k > 0 ) echo ' | '; ?> 
+											<a href="<?php echo $v['url'];?>" target="_blank"><?php echo $v['name'];?></a> 
+										<?php }?>
+										</td>
+									</tr>
+									<tr>
+										<td><span class="label label-primary">编辑器</span></td>
+										<td><?php foreach($mac[5] as $k => $v){?>
+											<?php if( $k > 0 ) echo ' | '; ?> 
+											<a href="<?php echo $v['url'];?>" target="_blank"><?php echo $v['name'];?></a> 
+										<?php }?></td>
+									</tr>
+									<tr>
+										<td><span class="label label-primary">网络工具</span></td>
+										<td><?php foreach($mac[6] as $k => $v){?>
+											<?php if( $k > 0 ) echo ' | '; ?> 
+											<a href="<?php echo $v['url'];?>" target="_blank"><?php echo $v['name'];?></a> 
+										<?php }?></td>
+									</tr>
+									<tr>
+										<td><span class="label label-primary">工具效率</span></td>
+										<td><?php foreach($mac[7] as $k => $v){?>
+											<?php if( $k > 0 ) echo ' | '; ?> 
+											<a href="<?php echo $v['url'];?>" target="_blank"><?php echo $v['name'];?></a> 
+										<?php }?></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+*/?>
 					</div>
 				</div>
 			</div>
